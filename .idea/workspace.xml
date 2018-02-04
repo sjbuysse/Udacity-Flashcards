@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="785a1579-e261-4cfc-8885-da01e91a4e2c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utils/notifications.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.flowconfig" afterPath="$PROJECT_DIR$/.flowconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App.js" afterPath="$PROJECT_DIR$/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/deck-list-item.js" afterPath="$PROJECT_DIR$/components/deck-list-item.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/deck.js" afterPath="$PROJECT_DIR$/components/deck.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/decks-list.js" afterPath="$PROJECT_DIR$/components/decks-list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/new-deck.js" afterPath="$PROJECT_DIR$/components/new-deck.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/quiz.js" afterPath="$PROJECT_DIR$/components/quiz.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/colors.js" afterPath="$PROJECT_DIR$/utils/colors.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,8 +19,8 @@
       <file leaf-file-name="deck-list-item.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/deck-list-item.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            <state relative-caret-position="272">
+              <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -265,12 +253,12 @@
       <option name="presentableId" value="Default" />
       <updated>1517164793082</updated>
       <workItem from="1517164794326" duration="3239000" />
-      <workItem from="1517657289938" duration="31234000" />
+      <workItem from="1517657289938" duration="31513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34473000" />
+    <option name="totallyTimeSpent" value="34752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="822" extended-state="6" />
@@ -645,8 +633,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/deck-list-item.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        <state relative-caret-position="272">
+          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

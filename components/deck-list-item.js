@@ -12,9 +12,13 @@ export default class DeckListItem extends Component {
         const {bounceValue} = this.state;
         const {navigateToDeck} = this.props;
         Animated.sequence([
-            Animated.timing(bounceValue, {duration: 200, toValue: 1.04}),
-            Animated.spring(bounceValue, {toValue: 1, friction: 4})
-        ]).start(navigateToDeck);
+            Animated.timing(bounceValue, {duration: 200, toValue: 1.07}),
+        ]).start(() => {
+            navigateToDeck();
+            this.setState({
+                bounceValue: new Animated.Value(1)
+            });
+        });
     }
 
     render() {
