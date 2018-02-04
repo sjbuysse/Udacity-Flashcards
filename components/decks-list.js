@@ -6,17 +6,15 @@ import DeckListItem from "./deck-list-item";
 import { setActiveDeckTitle } from "../statemanagement/actions/data/active-deck-title.actions";
 
 const DecksList = (props) => {
-    const {decks, navigation, removeDeck,setActiveDeckTitle} = props;
-    handleClick = (deck) => {
+    const {decks, navigation, removeDeck, setActiveDeckTitle} = props;
+    handleSelect = (deck) => {
         setActiveDeckTitle(deck.title);
         navigation.navigate('Deck');
-    }
+    };
     return (
         <ScrollView style={styles.container}>
             {decks.map(deck => (
-                    <TouchableOpacity key={deck.title} onPress={() => handleClick(deck)}>
-                        <DeckListItem deck={deck} handleRemove={() => removeDeck(deck.title)}/>
-                    </TouchableOpacity>
+                    <DeckListItem key={deck.title} navigateToDeck={() => handleSelect(deck)} deck={deck} handleRemove={() => removeDeck(deck.title)}/>
                 )
             )}
         </ScrollView>

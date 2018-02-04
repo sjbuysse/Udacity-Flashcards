@@ -1,24 +1,43 @@
 import React, { Component } from 'react';
 import { black } from '../utils/colors';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Animated } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
-export default DeckListItem = (props) => {
-        const {deck, handleRemove} = props;
+export default class DeckListItem extends Component {
+    state = {
+        bounceValue: new Animated.Value(1)
+    };
+
+    handleSelect = () => {
+        const {bounceValue} = this.state;
+        const {navigateToDeck} = this.props;
+        Animated.sequence([
+            Animated.timing(bounceValue, {duration: 200, toValue: 1.04}),
+            Animated.spring(bounceValue, {toValue: 1, friction: 4})
+        ]).start(navigateToDeck);
+    }
+
+    render() {
+        const {deck, handleRemove} = this.props;
+        const {bounceValue} = this.state;
         const questionsAmt = deck.questions.length;
         return (
-            <View style={styles.container}>
-                <View style={styles.titleWrapper}>
-                    <Text style={styles.title}>{deck.title}</Text>
-                    <Text>
-                        {questionsAmt} {questionsAmt === 1 ? 'card' : 'cards'}
-                    </Text>
+            <TouchableOpacity onPress={() => this.handleSelect()}>
+                <View style={styles.container}>
+                    <View style={styles.titleWrapper}>
+                        <Animated.Text
+                            style={[styles.title, {transform: [{scale: bounceValue}]}]}>{deck.title}</Animated.Text>
+                        <Text>
+                            {questionsAmt} {questionsAmt === 1 ? 'card' : 'cards'}
+                        </Text>
+                    </View>
+                    <TouchableOpacity onPress={handleRemove}>
+                        <FontAwesome name='trash-o'></FontAwesome>
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity onPress={handleRemove}>
-                    <FontAwesome name='trash-o'></FontAwesome>
-                </TouchableOpacity>
-            </View>
+            </TouchableOpacity>
         )
+    }
 }
 
 const styles = StyleSheet.create({

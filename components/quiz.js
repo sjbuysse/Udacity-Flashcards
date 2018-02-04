@@ -9,19 +9,24 @@ import { green, red, white } from "../utils/colors";
 import Button from "./button";
 import CardContent from "./card-content";
 import { createQuizContainerState } from "../statemanagement/reducers/containers/quiz.reducer";
+import { clearLocalNotification, setLocalNotification } from "../utils/notifications";
 
 class Quiz extends Component {
     componentWillMount() {
         this.props.resetQuizState();
     }
     render() {
-        const {questionNumber, flipped, totalQuestions, currentQuestion, flipCard, setQuestionNumber, score, setScore, navigation} = this.props;
+        const {questionNumber, flipped, totalQuestions, currentQuestion, flipCard, setQuestionNumber, score, setScore, navigation, resetQuizState} = this.props;
         const handleSubmit = (isCorrect) => {
+            flipCard(false);
             const increment = isCorrect ? 1 : 0;
             setScore(score + increment);
             setQuestionNumber(questionNumber + 1);
         };
         if (questionNumber > totalQuestions) {
+            clearLocalNotification().then(
+                setLocalNotification
+            );
             return (
                 <View style={[styles.container, {justifyContent: 'center'}]}>
                     <View style={styles.centerWrapper}>
@@ -29,7 +34,8 @@ class Quiz extends Component {
                             Sweet, all done! You're scored {Math.round((score/totalQuestions)*100)}% on this test.
                         </Text>
                         <View style={[styles.centerWrapper, {marginTop: 50}]}>
-                            <Button onPress={() => navigation.navigate('Home')}>Go Home</Button>
+                            <Button onPress={() => resetQuizState()}>Restart Quiz</Button>
+                            <Button onPress={() => navigation.goBack()}>Back to Deck</Button>
                         </View>
                     </View>
                 </View>

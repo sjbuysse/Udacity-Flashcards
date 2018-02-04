@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
 import { black, gray, white } from '../utils/colors';
+import { Constants } from 'expo';
 import Button from './button';
 import { connect } from "react-redux";
+import MyStatusBar from "./MyStatusBar";
 
 class Deck extends Component {
-    componentDidMount = () => {
-
-    }
     render() {
         const {deck, navigation} = this.props;
         const questionsAmt = deck.questions.length;
         return (
             <View style={styles.container}>
+                <MyStatusBar backgroundColor='#000000' barStyle='light-content' />
                 <View style={styles.titleWrapper}>
                     <Text style={styles.title}>
                         {deck.title}
@@ -22,8 +22,9 @@ class Deck extends Component {
                     </Text>
                 </View>
                 <View>
-                    <Button onPress={() => navigation.navigate('NewCard',{deckTitle: deck.title})}>Add Card</Button>
-                    <Button onPress={() => navigation.navigate('Quiz')} textColor={white} backgroundColor={black}>Start Quiz</Button>
+                    <Button onPress={() => navigation.navigate('NewCard', {deckTitle: deck.title})}>Add Card</Button>
+                    <Button onPress={() => navigation.navigate('Quiz')} textColor={white} backgroundColor={black}>Start
+                        Quiz</Button>
                 </View>
             </View>
         )

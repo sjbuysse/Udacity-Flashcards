@@ -2874,9 +2874,9 @@ ip@^1.1.4, ip@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
 
-ipaddr.js@1.5.2:
+ipaddrMyStatusBar.js@1.5.2:
   version "1.5.2"
-  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.5.2.tgz#d4b505bde9946987ccf0fc58d9010ff9607e3fa0"
+  resolved "https://registry.yarnpkg.com/ipaddrMyStatusBar.js/-/ipaddrMyStatusBar.js-1.5.2.tgz#d4b505bde9946987ccf0fc58d9010ff9607e3fa0"
 
 is-arrayish@^0.2.1:
   version "0.2.1"
@@ -4694,7 +4694,7 @@ proxy-addr@~2.0.2:
   resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-2.0.2.tgz#6571504f47bb988ec8180253f85dd7e14952bdec"
   dependencies:
     forwarded "~0.1.2"
-    ipaddr.js "1.5.2"
+    ipaddrMyStatusBar.js "1.5.2"
 
 proxy-agent@2:
   version "2.2.0"

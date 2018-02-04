@@ -11,7 +11,9 @@ import NewDeck from './components/new-deck';
 import NewCard from './components/new-card';
 import Deck from './components/deck';
 import Quiz from './components/quiz';
-import { purple, white } from "./utils/colors";
+import { black, purple, white } from "./utils/colors";
+import MyStatusBar from "./components/MyStatusBar";
+import { setLocalNotification } from "./utils/notifications";
 
 const Tabs = TabNavigator({
         decksList: {
@@ -51,21 +53,44 @@ const Tabs = TabNavigator({
 
 const Stacks = StackNavigator({
     Home: {
-        screen: Tabs
+        screen: Tabs,
+        navigationOptions: {
+            title: 'Udacicards',
+        }
     },
     Deck: {
-        screen: Deck
+        screen: Deck,
+        navigationOptions: {
+            title: 'Quiz',
+            headerStyle: {
+                backgroundColor: '#000',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            }
+        }
     },
     NewCard: {
         screen: NewCard
     },
     Quiz: {
-        screen: Quiz
+        screen: Quiz,
+        navigationOptions: {
+            headerStyle: {
+                backgroundColor: '#000',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            }
+        }
     }
 });
 
 export default class App extends React.Component {
     componentDidMount() {
+        setLocalNotification();
         store.dispatch(fetchDecks());
     }
 
@@ -73,9 +98,7 @@ export default class App extends React.Component {
         return (
             <Provider store={store}>
                 <View style={styles.container}>
-                    <View style={{height: Constants.statusBarHeight}}>
-                        <StatusBar/>
-                    </View>
+                    <MyStatusBar backgroundColor='#000000' barStyle='light-content'/>
                     <Stacks/>
                 </View>
             </Provider>
